@@ -1,4 +1,4 @@
-# gh-pulls
+# gh-pulls v0.1.0
 
 > CLI tool for showing numbers of pull requests by the user of the given user name.
 
