@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "description": "CLI tool for showing numbers of pull requests by the user of the given user name.",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
-    "test": "kocha test"
+    "test": "run-p -r kocha-test stub-server",
+    "kocha-test": "sleep 1 && kocha test",
+    "stub-server": "stubbatti",
+    "cov": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "codecov": "npm run cov && codecov",
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -24,5 +30,15 @@
     "chalk": "^2.0.1",
     "minimisted": "^2.0.0",
     "octokat": "^0.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "codecov": "^2.2.0",
+    "kocha": "^1.8.0",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^11.0.3",
+    "standard": "^10.0.2",
+    "stubbatti": "^1.2.0",
+    "testdouble": "^3.2.2"
   }
 }

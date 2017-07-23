@@ -12,23 +12,26 @@ const main = argv => {
 
   if (!user) {
     console.log(chalk.red('Error:'), 'user name is not specified')
-    process.exit()
+    process.exit(1)
   }
 
-  return printPullRequestCount(user)
+  return getPullRequestCount(user).then(count => {
+    console.log(`${user}: ${count}`)
+  })
 }
 
 /**
- * Prints the pull reqeust count of the given user.
+ * gets the pull reqeust count of the given user.
  * @param {string} user The user name
  * @return {Promise}
  */
-const printPullRequestCount = user => {
-  const octo = new Octokat()
+const getPullRequestCount = user => initClient(process.env.API_ROOT)
+  .search('issues')
+  .fetch({ q: `is:pr author:${user}` })
+  .then(result => result.totalCount)
 
-  return octo.search('issues').fetch({ q: `is:pr author:${user}` }).then(result => {
-    console.log(`${user}: ${result.totalCount}`)
-  })
+const initClient = rootURL => {
+  return new Octokat({ rootURL })
 }
 
 minimisted(main)
