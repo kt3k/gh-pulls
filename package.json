@@ -1,0 +1,28 @@
+{
+  "name": "gh-pulls",
+  "version": "0.1.0",
+  "description": "CLI tool for showing numbers of pull requests by the user of the given user name.",
+  "main": "index.js",
+  "scripts": {
+    "test": "kocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kt3k/gh-pulls.git"
+  },
+  "keywords": [
+    "github",
+    "cli"
+  ],
+  "author": "Yoshiya Hinosawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kt3k/gh-pulls/issues"
+  },
+  "homepage": "https://github.com/kt3k/gh-pulls#readme",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "minimisted": "^2.0.0",
+    "octokat": "^0.9.1"
+  }
+}
