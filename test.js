@@ -17,6 +17,14 @@ describe('gh-pulls', () => {
     })
   })
 
+  it('shows help message when called with -h', done => {
+    exec('node index.js -h', { env }, (err, stdout) => {
+      expect(err).to.equal(null)
+      expect(stdout.toString().trim()).to.match(/Usage: gh-pulls <user> \[options\]/)
+      done()
+    })
+  })
+
   it('throws error when the parameter is not given', done => {
     exec('node index.js', { env }, (err) => {
       expect(err).to.not.equal(null)
