@@ -7,8 +7,9 @@
   "scripts": {
     "test": "run-p -r kocha-test stub-server",
     "kocha-test": "sleep 1 && kocha test",
+    "kocha-test-cov": "sleep 1 && nyc --reporter=lcov --reporter=text-summary kocha test",
     "stub-server": "stubbatti",
-    "cov": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "cov": "run-p -r kocha-test-cov stub-server",
     "codecov": "npm run cov && codecov",
     "lint": "standard"
   },
