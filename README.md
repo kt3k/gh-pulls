@@ -1,4 +1,4 @@
-# gh-pulls v1.0.0
+# gh-pulls v1.1.0
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/kt3k/gh-pulls.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/kt3k/gh-pulls.svg?style=svg)](https://circleci.com/gh/kt3k/gh-pulls)
