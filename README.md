@@ -14,7 +14,7 @@ Install via npm:
 $ npm i -g gh-pulls
 ```
 
-Hit the command `gh-pulls` with the names.
+Hit the command `gh-pulls` with a name.
 
 ```console
 $ gh-pulls mojombo
