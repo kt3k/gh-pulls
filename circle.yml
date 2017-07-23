@@ -3,4 +3,4 @@ machine:
     version: 8
 test:
   post:
-    - codecov
+    - npm run codecov
