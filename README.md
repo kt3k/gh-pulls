@@ -21,6 +21,16 @@ $ gh-pulls mojombo
 mojombo: 43
 ```
 
+# Options
+
+```
+Usage: gh-pulls <user> [options]
+
+Options:
+  -h, --help         Shows help message.
+  -w, --wait         Milliseconds to wait before invoking GitHub Search API.
+```
+
 # License
 
 MIT

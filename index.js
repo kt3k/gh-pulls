@@ -8,6 +8,11 @@ const chalk = require('chalk')
  * @param {Object} argv minimist-parsed cli opts
  */
 const main = argv => {
+  if (argv.help) {
+    console.log(usage)
+    process.exit(0)
+  }
+
   const user = argv._[0]
 
   if (!user) {
@@ -15,10 +20,18 @@ const main = argv => {
     process.exit(1)
   }
 
-  return getPullRequestCount(user).then(count => {
-    console.log(`${user}: ${count}`)
-  })
+  return wait(+argv.wait || 0)
+    .then(() => getPullRequestCount(user))
+    .then(count => {
+      console.log(`${user}: ${count}`)
+    })
 }
+
+/**
+ * Waits n ms and resolves.
+ * @param {number} n The ms to wait
+ */
+const wait = n => new Promise(resolve => setTimeout(resolve, n))
 
 /**
  * gets the pull reqeust count of the given user.
@@ -34,4 +47,19 @@ const initClient = rootURL => {
   return new Octokat({ rootURL })
 }
 
-minimisted(main)
+const usage = `
+Usage: gh-pulls <user> [options]
+
+Options:
+  -h, --help         Shows help message.
+  -w, --wait         Milliseconds to wait before invoking GitHub Search API.
+`.trim()
+
+minimisted(main, {
+  string: ['w', 'wait'],
+  boolean: ['h', 'help'],
+  alias: {
+    w: 'wait',
+    h: 'help'
+  }
+})
