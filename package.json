@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.0",
-    "codecov": "^2.2.0",
+    "codecov": "^3.0.0",
     "kocha": "^1.8.0",
     "npm-run-all": "^4.0.2",
     "nyc": "^11.0.3",
