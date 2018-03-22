@@ -30,7 +30,7 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "minimisted": "^2.0.0",
-    "octokat": "^0.9.1"
+    "octokat": "^0.10.0"
   },
   "devDependencies": {
     "chai": "^4.1.0",
