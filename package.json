@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/kt3k/gh-pulls#readme",
   "dependencies": {
-    "chalk": "^2.0.1",
+    "chalk": "^3.0.0",
     "minimisted": "^2.0.0",
     "octokat": "^0.10.0"
   },
