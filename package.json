@@ -37,7 +37,7 @@
     "codecov": "^3.0.0",
     "kocha": "^1.8.0",
     "npm-run-all": "^4.0.2",
-    "nyc": "^14.0.0",
+    "nyc": "^15.0.0",
     "standard": "^14.0.0",
     "stubbatti": "^1.2.0",
     "testdouble": "^3.2.2"
